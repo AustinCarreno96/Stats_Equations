@@ -34,7 +34,8 @@ class Basic_Equations:
         median = 0.0
 
         if len(data_set) % 2 != 0:
-            median = data_set[(len(data_set) + 1) / 2]
+            median_index = int((len(data_set) + 1) / 2)
+            median = data_set[median_index]
         else:
             median = 0.5 * (data_set[int(len(data_set) / 2) - 1] + data_set[int((len(data_set) / 2) + 1) - 1])
         return median
