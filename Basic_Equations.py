@@ -31,7 +31,6 @@ class Basic_Equations:
 
     def find_median(self, data_set):
         data_set.sort()
-        print(data_set)
         median = 0.0
 
         if len(data_set) % 2 != 0:
@@ -56,7 +55,7 @@ class Basic_Equations:
             return self.find_sample_mean(self, data_set)
 
         else:
-            return
+            return 0
 
     def find_sample_variance(self, data_set):
         numerator = 0
