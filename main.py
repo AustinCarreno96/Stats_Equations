@@ -1,7 +1,7 @@
 import Basic_Equations
 import Probability
 import Probability_Distribution_of_X
-
+import Joint_Probability_Distribution as JPD
 
 # This will solve simple equations in stats for me by taking an array of numbers and applying simple math.
 def main():
@@ -11,18 +11,31 @@ def main():
     user_choice = input("Pick The Type of Problem Needed To Be Solved:"
                         "\n1. Mean/Median/Trimmed Mean/Standard Deviation/Sample Variance"
                         "\n2. Probability Distribution of X"
+                        "\n3. Joint Probability Distribution"
                         "\nChoice: ")
 
     match user_choice:
-        case "1":
-            basic_equations(basic_eq)
-        case "2":
-            factorial_equations(prob_dist_of_X)
-        case "3": prob.place_holder(prob)
+        case "1": basic_equations(basic_eq)
+        case "2": factorial_equations(prob_dist_of_X)
+        case "3": JPD.joint_prob_distribution()
 
 
+def print_statement_without_trimmed_mean(sample_mean, median, sample_range, sample_variance, standard_derivation):
+    print("\nThe Sample Mean is: " + str(round(sample_mean, 3)) +
+          "\nThe Median is: " + str(round(median, 3)) +
+          "\nThe Sample Range is: " + str(round(sample_range, 3)) +
+          "\nThe Sample Variance is: " + str(round(sample_variance, 4)) +
+          "\nThe Standard Derivation is: " + str(round(standard_derivation, 4)))
 
-    # create_histogram(data_set)
+def print_statement_with_trimmed_mean(sample_mean, median, sample_range,
+                                      sample_variance, standard_derivation, trimmed_mean):
+    print("\nThe Sample Mean is: " + str(round(sample_mean, 3)) +
+          "\nThe Median is: " + str(round(median, 3)) +
+          "\nThe Sample Range is: " + str(sample_range) +
+          "\nThe Trimmed Mean is: " + str(round(trimmed_mean, 3)) +
+          "\nThe Sample Variance is: " + str(round(sample_variance, 4)) +
+          "\nThe Standard Derivation is: " + str(round(standard_derivation, 4)))
+
 def basic_equations(basic_eq):
     data_set = input("Enter the points in the data set: ").split()
     data_set = [float(point) for point in data_set]
@@ -35,21 +48,12 @@ def basic_equations(basic_eq):
     trimmed_mean = basic_eq.find_trimmed_mean(basic_eq, data_set)
 
     if trimmed_mean == 0:
-        print("\nThe Sample Mean is: " + str(round(sample_mean, 3)) +
-              "\nThe Median is: " + str(round(median, 3)) +
-              "\nThe Sample Range is: " + str(round(sample_range, 3)) +
-              "\nThe Sample Variance is: " + str(round(sample_variance, 4)) +
-              "\nThe Standard Derivation is: " + str(round(standard_derivation, 4)))
+        print_statement_without_trimmed_mean(sample_mean, median, sample_range, sample_variance, standard_derivation)
     else:
-        print("\nThe Sample Mean is: " + str(round(sample_mean, 3)) +
-              "\nThe Median is: " + str(round(median, 3)) +
-              "\nThe Sample Range is: " + str(sample_range) +
-              "\nThe Trimmed Mean is: " + str(round(trimmed_mean, 3)) +
-              "\nThe Sample Variance is: " + str(round(sample_variance, 4)) +
-              "\nThe Standard Derivation is: " + str(round(standard_derivation, 4)))
+        print_statement_with_trimmed_mean(sample_mean, median, sample_range,
+                                          sample_variance, standard_derivation, trimmed_mean)
 
 def factorial_equations(prob_dist_of_X):
-    # prob_dist_of_X.probability_distribution_class.probability_distribution_of_X(prob_dist_of_X)
     prob_dist_of_X.probability_distribution_of_X()
 
 main()
