@@ -1,22 +1,23 @@
 import Basic_Equations
 import Probability
-import Factorial_Math
+import Probability_Distribution_of_X
 
 
 # This will solve simple equations in stats for me by taking an array of numbers and applying simple math.
 def main():
     basic_eq = Basic_Equations.Basic_Equations
     prob = Probability.Probability
-    factorial_math = Factorial_Math
+    prob_dist_of_X = Probability_Distribution_of_X
     user_choice = input("Pick The Type of Problem Needed To Be Solved:"
                         "\n1. Mean/Median/Trimmed Mean/Standard Deviation/Sample Variance"
-                        "\n2. Factorial Math"
+                        "\n2. Probability Distribution of X"
                         "\nChoice: ")
 
     match user_choice:
         case "1":
             basic_equations(basic_eq)
-        case "2": factorial_equations(factorial_math)
+        case "2":
+            factorial_equations(prob_dist_of_X)
         case "3": prob.place_holder(prob)
 
 
@@ -47,8 +48,8 @@ def basic_equations(basic_eq):
               "\nThe Sample Variance is: " + str(round(sample_variance, 4)) +
               "\nThe Standard Derivation is: " + str(round(standard_derivation, 4)))
 
-def factorial_equations(factorial_math):
-    factorial_math.factorial_math_class.factorial_math(factorial_math.factorial_math_class)
-
+def factorial_equations(prob_dist_of_X):
+    # prob_dist_of_X.probability_distribution_class.probability_distribution_of_X(prob_dist_of_X)
+    prob_dist_of_X.probability_distribution_of_X()
 
 main()
