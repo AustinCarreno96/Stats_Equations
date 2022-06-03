@@ -3,6 +3,7 @@ import Probability
 import Probability_Distribution_of_X
 import Joint_Probability_Distribution as JPD
 
+
 # This will solve simple equations in stats for me by taking an array of numbers and applying simple math.
 def main():
     basic_eq = Basic_Equations.Basic_Equations
