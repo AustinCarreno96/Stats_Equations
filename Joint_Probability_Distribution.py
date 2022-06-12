@@ -50,11 +50,11 @@ def joint_prob_distribution():
 
                     third_multiplier_list.append((int(sample_fruit) - x_index) - y_index)
 
-                    first_multiplier = Probability_Distribution_of_X.factorial_equation(first_multiplier_list)
-                    second_multiplier = Probability_Distribution_of_X.factorial_equation(second_multiplier_list)
-                    third_multiplier = Probability_Distribution_of_X.factorial_equation(third_multiplier_list)
+                    first_multiplier = Probability_Distribution_of_X.factorial_equation(first_multiplier_list[0], first_multiplier_list[1])
+                    second_multiplier = Probability_Distribution_of_X.factorial_equation(second_multiplier_list[0], second_multiplier_list[1])
+                    third_multiplier = Probability_Distribution_of_X.factorial_equation(third_multiplier_list[0], third_multiplier_list)
 
-                    denominator = Probability_Distribution_of_X.factorial_equation(denominator_list)
+                    denominator = Probability_Distribution_of_X.factorial_equation(denominator_list[0], denominator_list[1])
                     numerator = first_multiplier * second_multiplier * third_multiplier
 
                     data_frame.loc[data_frame.index == str(y_index),str(x_index)]=Fraction(int(numerator),int(denominator))

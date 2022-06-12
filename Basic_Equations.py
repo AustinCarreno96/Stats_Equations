@@ -75,3 +75,7 @@ class Basic_Equations:
         return data_set[len(data_set) - 1] - data_set[0]
 
 
+def convert_string_to_float(list):
+    for index in range(len(list)):
+        list[index] = float(list[index])
+    return list

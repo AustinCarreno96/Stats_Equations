@@ -2,9 +2,13 @@ import Basic_Equations
 import Probability
 import Probability_Distribution_of_X
 import Joint_Probability_Distribution as JPD
+import Standard_Deviation_of_a_Random_Variable as SRofaRV
+import Set_Arithmetic as SA
+import Binomial_Experiment as BE
+import Multinomial_Experiment as ME
+import Hypergeometric_Probability as HP
 
 
-# This will solve simple equations in stats for me by taking an array of numbers and applying simple math.
 def main():
     basic_eq = Basic_Equations.Basic_Equations
     prob = Probability.Probability
@@ -13,12 +17,22 @@ def main():
                         "\n1. Mean/Median/Trimmed Mean/Standard Deviation/Sample Variance"
                         "\n2. Probability Distribution of X"
                         "\n3. Joint Probability Distribution"
+                        "\n4. Standard Deviation of a Random Variable X"
+                        "\n5. Set Arithmetic"
+                        "\n6. Binomial Experiment"
+                        "\n7. Multinomial Experiment"
+                        "\n8. Hypergeometric Probability"
                         "\nChoice: ")
 
     match user_choice:
         case "1": basic_equations(basic_eq)
         case "2": factorial_equations(prob_dist_of_X)
         case "3": JPD.joint_prob_distribution()
+        case "4": SRofaRV.main()
+        case "5": SA.main()
+        case "6": BE.main()
+        case "7": ME.main()
+        case "8": HP.main()
 
 
 def print_statement_without_trimmed_mean(sample_mean, median, sample_range, sample_variance, standard_derivation):
@@ -57,4 +71,7 @@ def basic_equations(basic_eq):
 def factorial_equations(prob_dist_of_X):
     prob_dist_of_X.probability_distribution_of_X()
 
+
+def placeholder():
+    print("placeholder")
 main()
