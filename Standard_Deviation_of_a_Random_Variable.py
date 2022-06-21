@@ -1,6 +1,6 @@
 import math
 
-def main():
+def main_function():
     table = {'x_values': input("Enter the values of x (separate by space): ").split(),
              'f(x)': input("Enter the values of f(x) (separate by space): ").split()}
     table['x_values'] = [float(x) for x in table['x_values']]

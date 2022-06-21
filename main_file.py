@@ -1,18 +1,5 @@
-import Basic_Equations
-import Probability
-import Probability_Distribution_of_X
-import Joint_Probability_Distribution as JPD
-import Standard_Deviation_of_a_Random_Variable as SRofaRV
-import Set_Arithmetic as SA
-import Binomial_Experiment as BE
-import Multinomial_Experiment as ME
-import Hypergeometric_Probability as HP
-
 
 def main():
-    basic_eq = Basic_Equations.Basic_Equations
-    prob = Probability.Probability
-    prob_dist_of_X = Probability_Distribution_of_X
     user_choice = input("Pick The Type of Problem Needed To Be Solved:"
                         "\n1. Mean/Median/Trimmed Mean/Standard Deviation/Sample Variance"
                         "\n2. Probability Distribution of X"
@@ -25,14 +12,30 @@ def main():
                         "\nChoice: ")
 
     match user_choice:
-        case "1": basic_equations(basic_eq)
-        case "2": factorial_equations(prob_dist_of_X)
-        case "3": JPD.joint_prob_distribution()
-        case "4": SRofaRV.main()
-        case "5": SA.main()
-        case "6": BE.main()
-        case "7": ME.main()
-        case "8": HP.main()
+        case "1":
+            import Basic_Equations
+            basic_equations(Basic_Equations.Basic_Equations)
+        case "2":
+            import Probability_Distribution_of_X
+            factorial_equations(Probability_Distribution_of_X)
+        case "3":
+            import Joint_Probability_Distribution as JPD
+            JPD.joint_prob_distribution()
+        case "4":
+            import Standard_Deviation_of_a_Random_Variable as SRofaRV
+            SRofaRV.main_function()
+        case "5":
+            import Set_Arithmetic as SA
+            SA.main_function()
+        case "6":
+            import Binomial_Experiment as BE
+            BE.main_function()
+        case "7":
+            import Multinomial_Experiment as ME
+            ME.main_function()
+        case "8":
+            import Hypergeometric_Probability as HP
+            HP.main_function()
 
 
 def print_statement_without_trimmed_mean(sample_mean, median, sample_range, sample_variance, standard_derivation):
@@ -74,4 +77,8 @@ def factorial_equations(prob_dist_of_X):
 
 def placeholder():
     print("placeholder")
+
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 main()

@@ -3,7 +3,7 @@ from Basic_Equations import convert_string_to_float as CSTF
 
 
 
-def main():
+def main_function():
     variable_dict = grab_variables()
     first = first_multiplier(variable_dict['x_list'], variable_dict['n'])
     second = prob_math(variable_dict['prob_list'], variable_dict['x_list'])
@@ -52,4 +52,4 @@ def prob_math(prob_list, x_list):
     return second_multiplier
 
 
-main()
+main_function()

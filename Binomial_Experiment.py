@@ -1,7 +1,7 @@
 import Probability_Distribution_of_X as PDoX
 from Basic_Equations import convert_string_to_float as CSTF
 
-def main():
+def main_function():
     variable_list = grab_variables()
 
     n = variable_list[0]
@@ -12,7 +12,7 @@ def main():
     b = binomial_distribution(n, x_list, p, q)
 
     for x_value in x_list:
-        print("P(X = " + str(x_value) + ") = " + str(round(b[int(x_value)], 3)))
+        print("P(X = " + str(x_value) + ") = " + str(round(b[int(x_value)], 4)))
 
     print("\nP(X <= " + str(len(x_list) - 1) + ") = " + str(round(sum(b), 3)))
     print("μ = " + str(find_mean_of_binomial_distribution(n, p)))
@@ -58,4 +58,4 @@ def find_variance_fo_binomial_distribution(n, p, q):
     return round(n * p * q, 2)
 
 
-main()
+main_function()

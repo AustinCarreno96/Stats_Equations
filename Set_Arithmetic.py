@@ -1,5 +1,5 @@
 
-def main():
+def main_function():
     set_dict = {'sample_space': set(input('What is the sample space: ').split()),
                 'A': set(input('What is the event A: ').split()),
                 'A`': set({}),

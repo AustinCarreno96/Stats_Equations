@@ -1,7 +1,7 @@
 from Probability_Distribution_of_X import factorial_equation as FE
 
 
-def main():
+def main_function():
     variable_dict = get_variables()
     x = variable_dict['x']
     k = variable_dict['k']
@@ -31,4 +31,5 @@ def math(x, k, p, q):
 def print_statement(x, k, p, probability):
     print("b^*(" + str(x) + "; " + str(k) + ", " + str(p) + ") = " + str(round(probability, 4)))
 
-main()
+
+main_function()

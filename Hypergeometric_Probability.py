@@ -1,7 +1,7 @@
 import math
 from Probability_Distribution_of_X import factorial_equation as FE
 
-def main():
+def main_function():
     variable_dict = grab_variables()
     N = variable_dict['N']
     n = variable_dict['n']
@@ -43,4 +43,6 @@ def print_statement(h_list, N, n, k, x_list):
         print("h(" + str(x_list[index]) + "; " + str(N) + ", " + str(n) + ", " + str(k) + ") = " + str(h_list[index]))
 
     print("The probability that at most " + str(len(x_list) - 1) + " wont fire: " + str(round(sum(h_list), 4)))
-main()
+
+
+main_function()
